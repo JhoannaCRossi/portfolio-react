@@ -23,7 +23,7 @@ export function App(){
             {/* //practica children */}
             <TwitterFollowCard 
                 userName='gray' 
-                isFollowing>
+                isFollowing={false}>
                     Pelipe Yepez
             </TwitterFollowCard>
             <TwitterFollowCard 
