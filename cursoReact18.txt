@@ -105,7 +105,27 @@ tus componentes, en diferentes puntos del renderizado.
 entonces useState nos ayuda a guardar una variable que nos diga si esta o no esta activa.
 
 
+    // const state = useState(false);
+    //use state devuelve un array de dos posiciones
+    //la primera tiene es el valor del estado
+    // const isFollowing = state[0];
+    //la segunda tiene una funcion que nos permite actualizar el estado
+    // const setIsFollowing = state[1];
+    
+    //por destructuring quedaria
+    const [isFollowing, setIsFollowing] = useState(false);
 
+uno de los conceptos mas importante el DOM virtual
+en lugar de volver a renderizar todo, react actualiz solo aquello que cambia. de forma declarativa.
+
+render de componentes=
+1*-cuando se actualiza el estado interno
+2*-cuando un compoinente padre se vuelve a renderizar, propaga cambios hacia abajo
+
+no es la mejor idea meter comentarios dentro del return. 
+pero {/*comentario*/}
+
+props de inicializacion, solo se inicializan una vez. cuando quieres inicializar un stado con props.
 
 
 

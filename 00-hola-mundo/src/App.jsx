@@ -1,27 +1,44 @@
 import './App.css';
 import { useState } from "react";
-
 import { TwitterFollowCard } from './TwitterFollowCard.jsx';
 
 export function App(){
-    const[name, setName] = useState('rossi')
-
+    const users= [
+        {
+            userName: 'Vincetico',
+            name:'Vicente Camarra',
+            isFollowing: true
+        },
+        {
+            userName: 'Castulo',
+            name:'Castulo Gonzalez',
+            isFollowing: false
+        }, 
+        {
+            userName: 'Ricky',
+            name:'Ricardo Martinez',
+            isFollowing: false
+        },
+        {
+            userName: 'Gio',
+            name:'Gio Carmona',
+            isFollowing: false
+        },
+        {
+            userName: 'Edgar',
+            name:'Eguita Ramirez',
+            isFollowing: true
+        }
+    ]
     return(
         <section className="App">
-            <TwitterFollowCard 
-                userName={name}>
-                    Pelipe Yepez
-            </TwitterFollowCard>
-            <TwitterFollowCard 
-                userName='blue'>
-                    Sonia Carrillo
-            </TwitterFollowCard>
-            <TwitterFollowCard>
-                    CantaClara Ortiz
-            </TwitterFollowCard>
-            <button onClick={() => setName('jhoa')}>
-                Cambio Nombre
-            </button>
+            {users.map(({userName, name, isFollowing}) => {
+            return (<TwitterFollowCard
+                key={userName} 
+                userName={userName} initialIsFallowing={isFollowing}>
+                {name}
+            </TwitterFollowCard>)
+            })}
         </section>
     )
 }
