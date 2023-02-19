@@ -1,41 +1,27 @@
 import './App.css';
+import { useState } from "react";
+
 import { TwitterFollowCard } from './TwitterFollowCard.jsx';
 
 export function App(){
-    const formatUserName = (userName) => `@${userName}`;
+    const[name, setName] = useState('rossi')
+
     return(
         <section className="App">
-            {/* <TwitterFollowCard 
-                formatUserName={formatUserName} 
-                userName='midudev' 
-                name="Midu" 
-                isFollowing/>
             <TwitterFollowCard 
-                formatUserName={formatUserName} 
-                userName='blue' 
-                name="Blue" 
-                isFollowing={false}/>
-            <TwitterFollowCard 
-                formatUserName={formatUserName} 
-                userName='gray' 
-                name="Gray" 
-                isFollowing/> */}
-            {/* //practica children */}
-            <TwitterFollowCard 
-                userName='gray' 
-                isFollowing={false}>
+                userName={name}>
                     Pelipe Yepez
             </TwitterFollowCard>
             <TwitterFollowCard 
-                userName='blue' 
-                isFollowing>
+                userName='blue'>
                     Sonia Carrillo
             </TwitterFollowCard>
-            <TwitterFollowCard 
-                
-                isFollowing>
+            <TwitterFollowCard>
                     CantaClara Ortiz
             </TwitterFollowCard>
+            <button onClick={() => setName('jhoa')}>
+                Cambio Nombre
+            </button>
         </section>
     )
 }
