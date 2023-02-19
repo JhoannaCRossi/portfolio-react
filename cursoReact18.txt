@@ -1,0 +1,111 @@
+SABER
+
+1-html
+2-css
+3-js
+
+LO QUE NECESITAS
+-node (entorno de ejecucion de js que se ejecuta en el servidor) // permite usar js en la terminal
+-NVM (administrador de versiones de node) // permite poder cambiar entre diferentes versiones
+-NPM O YARN (instalador de paquetes) // que permite descargar dependencias
+-Navegador (brave o google chrome)
+-editor de codigo (visual studio code)
+
+REACT
+-Biblioteca de js para construir interfaces de usuario
+-documentacion -> nueva version ver siempre
+-reactjs.wiki dudas
+-es de meta es de codigo abierto
+-no es imperativo, es declarativo
+-componentes rehusables.
+-react se puede reutilizar tanto en el cliente como en el servidor.
+
+-import ReactDOM from "https//esm.sh/react-dom@18.2.0/client"
+-componente que renderizara nuestra app (un div id= app);
+-guardamos en una variable DOM
+-const appDomElemnte = document.getElementById('app)
+-crear un root (tronco) = ReactDOM.createRoot(appDomElement)
+-que es lo que quieres renderizar dentro de la app?
+-string hola react
+-root.render('hola react')
+
+-crear un elemento react?
+React.createElement('elemento a crear','propiedades o atributos del elemento','lo que envuelve al elemento');
+const button = React.createElement('button', {"data-id": 123},'me gusta');
+root.render(button)
+
+-root.render -> no renderiza mas de un elemento.
+más de un elemento ? se envuelve en div o React.Fragment
+
+JSX
+-una extension de ecmascript basada es xml  y lo q permite es crear de una forma mas declarativa los elementos
+-describes la interfaz que quieres crear.
+-no es html
+-es javascript
+-acepta expresiones entre llaves (evalua la expresion)
+-evita inyección de codigo
+
+Herramienta -> speedy web compiler para ver creaciones de react con jsx y sin jsx.
+Herramienta -> empaquetador de apps web -> vite
+
+crear app
+
+npm init -y //inicia proyecto
+creas una carpeta en ingresas
+npm create vite@latest
+nombre app
+react
+js+swc -> transpilador como babel hechoc con rust
+cd entrar a la app
+npm install
+npm run dev //inicializa proyecto
+
+-main.jsx? => punto de entrada de nuestra aplicacion.
+
+-Componente? => una funcion que lo q hace es crear un elemento. Nombres de componentes PascalCase porq react no lo diferencia de elementos html.
+-parametro nombreado que recibe un componente = ({text})
+-siempre PascalCase el nombre
+
+app.jsx para indicarle al empaquetador que habra jsx en ese archivo.
+
+css archivos separados no en linea, y en componentes por className (SELECTOR DE CLASE);
+App.css
+index.css
+
+
+Maneras de estilar react
+-css moduls
+-style components
+-tailwing
+-chakraui (componentes nativos de react)
+...
+
+*Los estilos en jsx como objetos doble llave
+*La base de un componente de react => las propiedades, los parametros.*
+
+*parametro booleano al componente sin expresion es true si es falso paras isBolean={false}
+*puedes pasar funcion como parametros al componente tambien. como props!
+*tambien puedes pasar elementos.
+
+
+*Componente es la factoria de los elementos, y un elemento son los que renderiza react.
+*Las props que se pasa hacia los componentes deberian ser inmutables
+*Creas constante para tener un valor q necesites a partir de esa prop.
+
+Children todo lo q envuelves.
+
+Renderizado Concidional
+-dependiendo de una condición el componente renderiza y cambia o no.
+
+Estado? memoria del componente
+useState = hooks = la vida en react = añade cierta funcionalidad a los componentes de react, o ejecutar codigo arbitrario 
+cuando ocurre algo con tu componente, o funcionalidad para mejorar el componente, son utilidades para dotar de funcionalidad
+tus componentes, en diferentes puntos del renderizado.
+
+entonces useState nos ayuda a guardar una variable que nos diga si esta o no esta activa.
+
+
+
+
+
+
