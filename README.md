@@ -1,12 +1,9 @@
-# react
-# 00-hola-mundo //que termino siendo un Twitter Follow Card
+## Curso React
+ * 00-TwitterFollowCard -> https://github.com/JhoannaCRossi/react/tree/master/00-hola-mundo
 
-
-
-  <img src="https://github.com/JhoannaCRossi/react/blob/master/00-hola-mundo/src/assets/TwitterFollowCard.png" />
-
-
-<div style = "display:inline">
-<video src="https://user-images.githubusercontent.com/63922499/219910366-bcb67907-1cb9-4543-afb3-5b4f057bba32.mp4" />
+<div style = "display: flex;">
+  <img src="https://github.com/JhoannaCRossi/react/blob/master/00-hola-mundo/src/assets/TwitterFollowCard.png" witdh ="100px" height="150px" />
+  <img src="https://user-images.githubusercontent.com/63922499/220226976-0aa47465-5daa-4ccf-8c61-2ccc3fceaecd.gif" witdh ="100px" height="150px" />
 </div>
+
 
