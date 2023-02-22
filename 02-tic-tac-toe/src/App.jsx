@@ -5,10 +5,19 @@ import { Square } from "./components/Square";
 import {TURNS} from "./constants.js";
 import {checkWinnerFrom, checkEndGame} from "./logic/board.js"
 import { WinnerModal } from "./components/WinnerModal";
+import { saveGameFromStorage, resetGameStorage } from "./logic/storage";
 
 function App() {
-  const [board, setBoard] = useState(Array(9).fill(null));
-  const [turn, setTurn] = useState(TURNS.X);
+  const [board, setBoard] = useState(() => {
+    const boardFromStorage = window.localStorage.getItem('board');
+    if(boardFromStorage) return JSON.parse(boardFromStorage);
+    return Array(9).fill(null) 
+  });
+  const [turn, setTurn] = useState(() => {
+    const turnFromStorage = window.localStorage.getItem('turn');
+    if(turnFromStorage) return JSON.parse(turnFromStorage);
+    return TURNS.X 
+  });
   const [winner, setWinner] = useState(null);
 
   const updateBoard = (index) => {
@@ -19,6 +28,11 @@ function App() {
 
     const newTurn = turn == TURNS.X ? TURNS.O : TURNS.X;
     setTurn(newTurn);
+    //guardar partida
+    saveGameFromStorage({board: newBoard, turn: newTurn})
+    // window.localStorage.setItem('board', JSON.stringify(newBoard))
+    // window.localStorage.setItem('turn', JSON.stringify(newTurn))
+
     const newWinner = checkWinnerFrom(newBoard);
     if (newWinner) {
       confetti()
@@ -33,6 +47,9 @@ function App() {
     setBoard(Array(9).fill(null));
     setTurn(TURNS.X);
     setWinner(null);
+    resetGameStorage()
+    // window.localStorage.removeItem('board')
+    // window.localStorage.removeItem('turn')
   };
 
   return (
@@ -51,8 +68,11 @@ function App() {
       <section className="turn">
         <Square isSelected={turn == TURNS.X}>{TURNS.X}</Square>
         <Square isSelected={turn == TURNS.O}>{TURNS.O}</Square>
-      </section>
-
+      </section> 
+        { 
+          winner == null ? <h3>El turno le corresponde a {turn}</h3> : winner == false ? 
+          <h3>Nadie ha ganado</h3> : ''
+        } 
         <WinnerModal winner={winner} resetGame={resetGame}/>
     </main>
   );
