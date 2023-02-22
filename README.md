@@ -1,5 +1,7 @@
-## Curso React
- * 01-TwitterFollowCard -> https://github.com/JhoannaCRossi/react/tree/master/01-twitter-follow-card
+### Curso React Midudev
+#### Notas del curso -> https://github.com/JhoannaCRossi/react/blob/master/cursoReact18.txt
+
+* 01-TwitterFollowCard -> https://github.com/JhoannaCRossi/react/tree/master/01-twitter-follow-card
 
 <div style = "display: flex;">
   <img src="https://github.com/JhoannaCRossi/react/blob/master/01-twitter-follow-card/src/assets/TwitterFollowCard.png" witdh ="100px" height="150px" />
