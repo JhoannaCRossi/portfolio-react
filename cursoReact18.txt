@@ -131,6 +131,15 @@ OJO
 que los useState y todos los hooks jamas pueden estar dentro de un if, porque react guarda la posicion de
 cada useState en un array interno en memoria, perferia las posiciones y mezcla los useState.
 
+USE_STATE
+nos permite tener un estado en nuestro componente, un estado que al cambiar renderiza nuestro componente
+para reflejar en la interfaz este cambio.
 
+USE_EFFECT
+es un hook que nos permite ejecutar codigo arbitrario cuando el componente se monta en el DOM y cada vez
+que cambian las dependencias que nosotros le digamos.
+
+lintear -> STANDARD JS -> tiene reglas preestablecidas y lo va a formatear
+NO PRUEBAS TECNICAS SIN LINTER
 
 
