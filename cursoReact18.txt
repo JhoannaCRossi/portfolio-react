@@ -127,5 +127,10 @@ pero {/*comentario*/}
 
 props de inicializacion, solo se inicializan una vez. cuando quieres inicializar un stado con props.
 
+OJO
+que los useState y todos los hooks jamas pueden estar dentro de un if, porque react guarda la posicion de
+cada useState en un array interno en memoria, perferia las posiciones y mezcla los useState.
+
+
 
 
